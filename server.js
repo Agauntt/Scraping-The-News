@@ -34,9 +34,12 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 console.log(MONGODB_URI);
 // Routes
 
+app.get("/?", (req, res) => {
+  res.send("index");
+});
+
 // A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
-  });
   // Then, we grab the body of the html with axios
   axios
     .get("https://roguerocket.com/category/us/")
@@ -65,13 +68,14 @@ app.get("/scrape", function(req, res) {
           })
           .catch(function(err) {
             // If an error occurred, log it
-            console.log(err);
+            // console.log(err);
           });
       });
 
       // Send a message to the client
       res.send("Scrape Complete");
     });
+  });
 
 
 // Route for getting all Articles from the db
