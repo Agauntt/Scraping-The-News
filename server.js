@@ -26,9 +26,11 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
-// Drops the database,
 // mongoose.connect("mongodb://localhost/scrapednews")
-mongoose.connect("mongodb://localhost/scrapednews", { useNewUrlParser: true });
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapednews";
+
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+
 
 // Routes
 
