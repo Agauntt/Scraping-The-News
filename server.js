@@ -31,14 +31,11 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapednews";
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
-
+console.log(MONGODB_URI);
 // Routes
 
 // A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
-  // First, we clear the current Articles in the db, so only the newest will be displayed
-  db.Article.remove({}, function(err) { 
-    console.log('collection removed') 
   });
   // Then, we grab the body of the html with axios
   axios
@@ -75,7 +72,7 @@ app.get("/scrape", function(req, res) {
       // Send a message to the client
       res.send("Scrape Complete");
     });
-});
+
 
 // Route for getting all Articles from the db
 app.get("/articles", function(req, res) {
