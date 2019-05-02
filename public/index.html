@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>All the news thats worthy to scrape</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         a {
             color: black;
@@ -12,7 +13,15 @@
     </style>
 </head>
 <body>
-    <h3>Testing testing, 1...2...3</h3>
+    <div id="logo">
+        <img src="https://fontmeme.com/permalink/190502/b88738095debd5ef256e727fe6f5adb6.png" alt="netflix-font">
+        <br>
+        <form>
+            <button type="submit" id="scrapper">Scrape new news</button>
+        </form>
+    </div>
+    
+    <h3>Latest news articles:</h3>
     <div id="articles"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
