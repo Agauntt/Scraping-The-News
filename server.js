@@ -34,7 +34,7 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 console.log(MONGODB_URI);
 // Routes
 
-app.get("/?", (req, res) => {
+app.get("/", (req, res) => {
   res.send("index");
 });
 
@@ -67,8 +67,8 @@ app.get("/scrape", function(req, res) {
             console.log(dbArticle);
           })
           .catch(function(err) {
-            // If an error occurred, log it
-            // console.log(err);
+            //If an error occurred, log it
+            console.log(err);
           });
       });
 

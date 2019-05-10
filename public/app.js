@@ -9,6 +9,7 @@ $.getJSON("/articles", function(data) {
   });
 
   $("#scrapper").click(function() {
+    console.log("you clicked it")
       // Send the POST request.
       $.ajax("/scrape", {
         type: "GET"
